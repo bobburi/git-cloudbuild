@@ -1,13 +1,13 @@
-- id: 'tf_init_apply'
-  name: 'devopsevd/gcloudterraform:1.0'
-  entrypoint: '/bin/bash'
-  args:
+steps:
+  - id: 'tf_init_apply'
+    name: 'devopsevd/gcloudterraform:1.0'
+    entrypoint: '/bin/bash'
+    args:
     - '-c'
     - |
-      echo "************Print Current Directory************"
-      pwd
-      echo "************Listing Files************"
-      ls -la
+      if [ $_FOLDER_NAME ]; then
+           cd '$_FOLDER_NAME'
+      fi
       echo "************Terraform Init************"
       terraform init
       echo "************Terraform Plan************"
@@ -15,4 +15,4 @@
       echo "************Terraform Apply************"
       terraform apply -auto-approve
 options:
-  logging: CLOUD_LOGGING_ONLY
+    logging: CLOUD_LOGGING_ONLY
