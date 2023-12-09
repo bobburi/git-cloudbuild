@@ -18,6 +18,4 @@ steps:
       - 'terraform apply -auto-approve tfplan'
 
 options:
-  logging:
-    # Specify a Cloud Storage bucket for build logs
-    path: 'gs://buildlogs-1231'
+    logging: CLOUD_LOGGING_ONLY
