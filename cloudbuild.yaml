@@ -1,20 +1,14 @@
-- name: 'hashicorp/terraform:latest'
-  entrypoint: '/bin/bash'
-  args:
+steps:
+  - id: 'tf_init_apply'
+    name: 'devopsevd/gcloudterraform:1.0'
+    entrypoint: '/bin/bash'
+    args:
     - '-c'
-    - 'terraform init'
-
-- name: 'hashicorp/terraform:latest'
-  entrypoint: '/bin/bash'
-  args:
-    - '-c'
-    - 'terraform plan -out=tfplan'
-
-- name: 'hashicorp/terraform:latest'
-  entrypoint: '/bin/bash'
-  args:
-    - '-c'
-    - 'terraform apply -auto-approve tfplan'
-
+      echo "************Terraform Init************"
+      terraform init
+      echo "************Terraform Plan************"
+      terraform plan
+      echo "************Terraform Apply************"
+      terraform apply -auto-approve
 options:
     logging: CLOUD_LOGGING_ONLY
