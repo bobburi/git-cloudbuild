@@ -20,4 +20,4 @@ steps:
 options:
   logging:
     # Specify a Cloud Storage bucket for build logs
-    path: 'gs://buildlogs-1231/'
+    path: 'gs://buildlogs-1231'
