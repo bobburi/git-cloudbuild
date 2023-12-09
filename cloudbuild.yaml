@@ -19,6 +19,7 @@ steps:
 
 options:
   logging:
+    driver: 'gcs'
     # Specify a Cloud Storage bucket for build logs
     # Replace 'buildlogs-1231' with the actual name of your bucket
-    name: 'buildlogs-1231'
+    path: 'gs://buildlogs-1231'
