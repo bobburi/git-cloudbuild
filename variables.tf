@@ -9,20 +9,20 @@ variable "network_name" {
 
     type = string
 
-    default = "vcp-1112"
+    default = "vcp-012"
     description = "this is a network name"
   
 }
 
 variable "subnet_name" {
 type = string
-default = "sub-11"
+default = "sub-2211"
   
 }
 
 variable "instance_name" {
 
     type = string
-    default = "instance-1111"
+    default = "instance-1221"
   
 }

@@ -1,0 +1,18 @@
+steps:
+  - name: 'hashicorp/terraform:latest'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - 'terraform init'
+
+  - name: 'hashicorp/terraform:latest'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - 'terraform plan -var-file=your-var-file.tfvars -out=tfplan'
+
+  - name: 'hashicorp/terraform:latest'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - 'terraform apply -auto-approve tfplan'
