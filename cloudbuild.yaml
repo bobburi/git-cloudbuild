@@ -4,6 +4,10 @@ steps:
     entrypoint: '/bin/bash'
     args:
     - '-c'
+    - |
+      if [ $_FOLDER_NAME ]; then
+           cd '$_FOLDER_NAME'
+      fi
       echo "************Terraform Init************"
       terraform init
       echo "************Terraform Plan************"
