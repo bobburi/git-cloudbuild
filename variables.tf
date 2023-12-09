@@ -9,7 +9,7 @@ variable "network_name" {
 
     type = string
 
-    default = "vcp-012"
+    default = "vcp-012234"
     description = "this is a network name"
   
 }
