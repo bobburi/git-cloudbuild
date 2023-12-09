@@ -16,3 +16,9 @@ steps:
     args:
       - '-c'
       - 'terraform apply -auto-approve tfplan'
+
+options:
+  logging:
+    # Specify a Cloud Storage bucket for build logs
+    # Replace 'your-logs-bucket' with the actual name of your bucket
+    - 'buildlogs-1231'
