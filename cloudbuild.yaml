@@ -9,7 +9,7 @@ steps:
     entrypoint: 'bash'
     args:
       - '-c'
-      - 'terraform plan -var-file=your-var-file.tfvars -out=tfplan'
+      - 'terraform plan -out=tfplan'
 
   - name: 'hashicorp/terraform:latest'
     entrypoint: 'bash'
@@ -20,5 +20,5 @@ steps:
 options:
   logging:
     # Specify a Cloud Storage bucket for build logs
-    # Replace 'your-logs-bucket' with the actual name of your bucket
+    # Replace 'buildlogs-1231' with the actual name of your bucket
     - 'buildlogs-1231'
