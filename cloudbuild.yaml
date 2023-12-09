@@ -21,4 +21,4 @@ options:
   logging:
     # Specify a Cloud Storage bucket for build logs
     # Replace 'buildlogs-1231' with the actual name of your bucket
-    - 'buildlogs-1231'
+    name: 'buildlogs-1231'
